@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+	<meta name="viewport" content="width=device-width,initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+	<meta http-equiv="pragma" content="no-cache">
+	<meta http-equiv="cache-control" content="no-cache">
+	<meta http-equiv="expires" content="0">
+	<title>支付成功</title>
+	<link rel="stylesheet" href="../css/cj.min.css">
+	<link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+	<!--用户ID-->
+	<input type="hidden" id="userId" value="1" />
+	<!--支付成功标题-->
+	<section class="succ_box">
+		成功支付<span>20.00</span>元！
+	</section>
+	<!--支付成功标题 /-->
+	<!--刮刮卡-->
+	<section class="lottery_box">
+		<div class="lottery">
+			<!--获取刮奖-->
+			<div class="get_before">
+				<p class="title">刮刮卡活动名称</p>
+				<div class="get_btn" onclick="lottery.get(this)">点我刮奖</div>
+			</div>
+			<!--获取刮奖 /-->
+			<div class="get_after" id="getAfter">
+				<div class="region">
+					<span></span>
+					<img src="../images/lottery.png" id="canvas" width="180" height="45"/>
+				</div>
+			</div>
+		</div>
+		<div class="info">
+			<div class="fl">您有<span>2</span>次刮奖机会</div>
+			<div class="has fr"><a href="prizeList.html">已中奖<span>2</span>次</a></div>
+		</div>
+		<div class="btn">
+			<a href="javascript:;" class="weui_btn weui_btn_primary" onclick="lottery.getAgain()">再刮一次</a>
+		</div>
+		<div class="btn">
+			<a href="javascript:;" class="weui_btn weui_btn_gray" id="showAdrs">填写收货地址</a>
+		</div>
+	</section>
+	<!--刮刮卡 /-->
+	<!--收货地址-->
+	<section class="adrs_box" style="display: none;">
+		<div class="zz"></div>
+		<div class="adrs_from">
+			<div class="title">填写收货信息<i title="关闭" id="close">&times;</i></div>
+			<div class="input_view">
+				<input type="text" id="realname" placeholder="真实姓名"/>
+			</div>
+			<div class="input_view">
+				<input type="tel" id="phone" placeholder="手机号码"/>
+			</div>
+			<div class="input_view">
+				<textarea id="address" placeholder="收货地址"></textarea>
+			</div>
+			<div class="input_view">
+				<textarea id="remarks " placeholder="备注"></textarea>
+			</div>
+			<div class="btn">
+				<a href="javascript:;" class="weui_btn weui_btn_primary" onclick="save()">确认保存</a>
+			</div>
+		</div>
+		
+	</section>
+	<!--收货地址 /-->
+	<div class="follow">
+		<a href="http://mp.weixin.qq.com/s?__biz=MzI0MTEyOTY5MQ==&mid=402572104&idx=1&sn=b67092e6b467ecac57d44281945ffea0&scene=0&previewkey=sBQYSRJtvpGj9W74NWZio8wqSljwj2bfCUaCyDofEow%3D#wechat_redirect">关注</a>
+	</div>
+</body>
+</html>
+<script src="../vender/jquery/jquery-1.11.1.js"></script>
+<script src="../scripts/canvas.js"></script>
+<script src="../scripts/lottery.js"></script>
